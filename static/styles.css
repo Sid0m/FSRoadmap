@@ -293,7 +293,7 @@ body{
     background-image: url('background/bg.png'); /* Füge hier den Pfad zu deinem Bild ein */
     background-size: cover; /* Das Bild soll den gesamten Hintergrund abdecken */
     background-position: center; /* Zentriert das Hintergrundbild */
-    /*filter: blur(2px); /* Wendet den Blur-Effekt an */
+    filter: blur(1px); /* Wendet den Blur-Effekt an */
     transform: translateX(-50%);
     z-index: -1; /* Damit das Bild hinter dem Inhalt bleibt */
   }
