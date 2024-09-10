@@ -1,0 +1,307 @@
+:root {
+	--white: #ffffff;
+	--black: #000000;
+	--blue:  #4A4C99;
+	--gray:  #ebebeb;
+    --beige: #e6d6c8;
+    --slightyellow:#fef5d3;
+    --yellow: #ffff00;
+	--box-shadow1:0px 0px 18px 2px rgba(10, 55, 90, 0.15);
+    --pointer-top: 12px;
+}
+body{
+	font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    color: #637280;
+    background-color: var(--gray);
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.main .block-container {
+    max-width: 1400px; /* Setze hier deine gewünschte Breite */
+    padding-left: 50px; /* Optionale linke Innenabstände */
+    padding-right: 50px; /* Optionale rechte Innenabstände */
+}
+
+:focus{
+    outline: 0px solid transparent !important;
+}
+.timeline {
+    padding: 50px 0;
+    position: relative;
+}
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Skaliert das Bild, um den gesamten Container auszufüllen */
+    object-position: center; /* Zentriert das Bild innerhalb des Containers */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Verhindert, dass das Bild über den Rand des Containers hinausgeht */
+    position: relative;
+}
+.timeline-nodes {
+        padding-bottom: 75px;
+        position: relative;
+    }
+.timeline-nodes:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.timeline h3, .timeline p {
+    padding: 5px 15px;
+} 
+.timeline h3{
+    font-weight: lighter;
+    background: var(--blue);
+}
+.timeline p, .timeline time {
+    color: var(--blue)
+}
+.timeline::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    border-left: 2px solid var(--blue);
+    height: 100%;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+
+.timeline-nodes:nth-child(odd) h3,
+.timeline-nodes:nth-child(odd) p {
+    text-align: right;
+}
+.timeline-nodes:nth-child(odd) .timeline-date {
+    text-align: left;
+}
+ 
+.timeline-nodes:nth-child(even) .timeline-date {
+    text-align: right;
+}
+.timeline-nodes:nth-child(odd) .timeline-content::after {
+    content: "";
+    position: absolute;
+    top: var(--pointer-top);
+    right: auto;
+    left: 100%;
+    width: 0;
+    border-left: 10px solid var(--blue);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.timeline-nodes:nth-child(even) .timeline-content::after {
+    content: "";
+    position: absolute;
+    top: var(--pointer-top);
+    right: 100%;
+    width: 0;
+    border-right: 10px solid var(--blue);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.timeline-image {
+    position: relative;
+    z-index: 100;
+    order: 2;
+}
+.timeline-image::before {
+    content: "";
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--gray);
+    z-index: 1;
+    
+
+}
+.timeline-image img {
+    position: relative;
+    z-index: 100;
+}
+/*small device style*/
+
+@media (max-width: 991px) {
+    .timeline-nodes:nth-child(odd) h3,
+    .timeline-nodes:nth-child(odd) p {
+    text-align: left
+}
+.timeline-nodes:nth-child(even) {
+    flex-direction: row;
+}
+    .timeline::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 4%;
+    width: 0;
+    border-left: 2px solid var(--blue);
+    height: 100%;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+.timeline h3 {
+    font-size: 1.7rem;
+}
+.timeline p {
+    font-size: 14px;
+}
+.timeline-image {
+    position: absolute;
+    left: 0%;
+    top: 0;
+    order: 1;
+    /*transform: translateX(-50%;);*/
+}
+.timeline-nodes:nth-child(odd) .timeline-content::after {
+    content: "";
+    position: absolute;
+    top: var(--pointer-top);
+    left: auto;
+    right: 100%;
+    width: 0;
+    border-left: 0;
+    border-right: 10px solid var(--blue);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.timeline-nodes:nth-child(even) .timeline-content::after {
+    content: "";
+    position: absolute;
+    top: var(--pointer-top);
+    right: 100%;
+    width: 0;
+    border-right: 10px solid var(--blue);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.timeline-nodes:nth-child(even) .timeline-date {
+    text-align: left;
+}
+.timeline-image::before {
+    width: 65px;
+    height: 65px;
+}
+.timeline-content {
+    order: 1;
+}
+}
+
+/*extra small device style */
+@media (max-width: 575px) {
+    .timeline::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 5%;
+}
+.timeline-image {
+    position: absolute;
+    left: 0;
+    max-width: 50px;
+    max-height: 50px;
+    }
+.timeline-image::before {
+    width: 60px;
+    height: 60px;
+}
+}
+
+/* Versteckt das <p>-Element standardmäßig */
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Sichtbar, wenn ausgeklappt */
+}
+  
+  /* Wenn das Element aktiv ist, zeigt es den Inhalt */
+.collapsible-content.active {
+    max-height: 200px; /* Passe die Höhe an den Inhalt an */
+    opacity: 1;
+}
+  
+  /* Styling für den Pfeil im Button */
+.toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+  
+.toggle-btn .arrow {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+  
+  /* Wenn das <p>-Element aktiv ist, dreht sich der Pfeil um 180 Grad */
+.collapsible-content.active + .toggle-btn .arrow {
+    transform: rotate(180deg);
+}
+
+.arrow {
+    color: #ffffff;
+}
+
+.timeline-content {
+    position: relative;
+    border: none;
+    border-radius: 0 0 10px 10px;;
+    box-shadow: none;
+    transition: all 0.3s ease; /* Für eine sanfte Übergangsanimation */
+}
+
+.timeline-content.active {
+    border: 1px solid var(--blue); /* Umrandung erscheint */
+    box-shadow: 0px 3px 25px 0px rgba(10, 55, 90, 0.2); /* Schatten erscheint */
+    max-height: 500px;
+}
+
+.blur-background {
+    position: relative;
+    overflow: hidden; /* Wichtig, damit das Pseudo-Element innerhalb des Containers bleibt */
+    width: 100%;
+  }
+  
+  /* Pseudo-Element ::before, um das Hintergrundbild mit Blur-Effekt hinzuzufügen */
+  .blur-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 80%;
+    height: 100%;
+    background-image: url('background/bg.png'); /* Füge hier den Pfad zu deinem Bild ein */
+    background-size: cover; /* Das Bild soll den gesamten Hintergrund abdecken */
+    background-position: center; /* Zentriert das Hintergrundbild */
+    /*filter: blur(2px); /* Wendet den Blur-Effekt an */
+    transform: translateX(-50%);
+    z-index: -1; /* Damit das Bild hinter dem Inhalt bleibt */
+  }
+  
+  /* Zusätzliche Stile für den Inhalt */
+  .blur-background .container {
+    position: relative;
+    z-index: 1; /* Inhalt wird über das Pseudo-Element gelegt */
+  }
+  
+  
