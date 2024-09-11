@@ -18,6 +18,10 @@
     <div class="container" style="display: flex; justify-content: center;">
       <h1>OTH FutureSkills Projekt</h1>
     </div>
+    <div class="container"  style="justify-content: center;">
+      <p>Begleite unseren Protagonisten K. bei einer Reise durch die spannende Welt der Future Skills. Start unserer Reise ist aber kein Raumschiff oder ein Ort in der Zukunft, sondern ein ganz normaler Supermarktparkplatz. Hier steuert K. gerade nach einer durchzechten Nacht mit zwei riesigen Taschen voller Pfandflaschen den Eingang des Supermarktes an. Sein Ziel: Alle Pfandflaschen seiner Geburtstagsfeier so schnell wie möglich abgeben, damit er seinen Zug nach Hause pünktlich erreicht. Damit das auch gelingt, muss er einige Future Skills anwenden.</p>
+      <p>Für weitere Informationen zu den Future Skills, klicke auf den Pfeil für die jeweilige Definition</p>
+    </div>
     <div class="container">
       <div class="timeline">
         {% for skill in skills %}
@@ -30,10 +34,10 @@
             <p class="collapsible-content">{{ skill.definition }}</p>
           </div>
           <div class="col-2 col-sm-1 px-lg-3 order-1 timeline-image text-lg-center">
-            <img src="static/icons/{{ loop.index }}.png" class="img-fluid" alt="img">
+            <img src="static/icons/{{ skill.id }}.png" class="img-fluid" alt="img">
           </div>
           <div class="col-10 col-lg-5 order-1 order-lg-3 py-3">
-            <time>{{ skill.story }}</time>
+            <p>{{ skill.big_story }}</p>
           </div>
         </div>
         {% endfor %}
