@@ -54,15 +54,21 @@ body{
 .timeline-nodes:nth-child(even) {
     flex-direction: row-reverse;
 }
-.timeline h3, .timeline p {
+.timeline h3, .timeline p, .timeline a, .timeline b {
     padding: 5px 15px;
 } 
 .timeline h3{
     font-weight: lighter;
     background: var(--blue);
 }
-.timeline p, .timeline time {
+.timeline p, .timeline b{
     color: var(--blue)
+}
+.timeline a{
+    color: #000000;
+}
+.timeline b {
+    font-weight: bold;
 }
 .timeline::before {
     content: "";
@@ -144,7 +150,7 @@ body{
   
   /* Wenn das Element aktiv ist, zeigt es den Inhalt */
 .collapsible-content.active {
-    max-height: 200px; /* Passe die Höhe an den Inhalt an */
+    max-height: 300px; /* Passe die Höhe an den Inhalt an */
     opacity: 1;
 }
   
