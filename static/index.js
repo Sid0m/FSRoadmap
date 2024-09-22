@@ -21,3 +21,17 @@ document.querySelectorAll('.toggle-btn').forEach(button => {
     }
   });
 });  
+
+document.addEventListener('DOMContentLoaded', function () {
+  const impressumButton = document.getElementById('impressumButton');
+  const collapseImpressum = document.getElementById('collapseImpressum');
+  
+  // Event Listener when the collapse starts to show
+  $(collapseImpressum).on('shown.bs.collapse', function () {
+      console.log('Collapse is shown!');
+      impressumButton.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+      });
+  });
+});

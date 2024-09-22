@@ -1,5 +1,6 @@
 :root {
 	--white: #ffffff;
+    --oth: #f1f5f9;
 	--black: #000000;
 	--blue:  #4A4C99;
 	--gray:  #ebebeb;
@@ -11,12 +12,20 @@
 }
 body{
 	font-family: 'Roboto', sans-serif;
-    font-weight: lighter;
+    font-weight: bolder;
+    font-size: medium;
     color: #000000;
-    background-color: var(--gray);
+    background-color: var(--oth);
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+}
+.oth-img{
+    max-width: 500px; 
+    height: auto;
+}
+header{
+    background-color: var(--oth);
 }
 
 .main .block-container {
@@ -29,7 +38,6 @@ body{
     outline: 0px solid transparent !important;
 }
 .timeline {
-    padding: 50px 0;
     position: relative;
 }
 .cover-image {
@@ -48,9 +56,9 @@ body{
     position: relative;
 }
 .timeline-nodes {
-        padding-bottom: 75px;
-        position: relative;
-    }
+    padding-bottom: 50px;
+    position: relative;
+}
 .timeline-nodes:nth-child(even) {
     flex-direction: row-reverse;
 }
@@ -60,6 +68,7 @@ body{
 .timeline h3{
     font-weight: lighter;
     background: var(--blue);
+    font-size: 1.7rem;
 }
 .timeline p, .timeline b{
     color: var(--blue)
@@ -121,8 +130,8 @@ body{
 }
 .timeline-image::before {
     content: "";
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border: 2px solid var(--blue);
     border-radius: 50%;
     display: block;
@@ -188,7 +197,7 @@ body{
 
 .timeline-content.active {
     border: 1px solid var(--blue); /* Umrandung erscheint */
-    box-shadow: 0px 3px 25px 0px rgba(10, 55, 90, 0.2); /* Schatten erscheint */
+    box-shadow: 0px 3px 30px 4px rgba(10, 55, 90, 0.3); /* Schatten erscheint */
     max-height: 500px;
 }
 
@@ -203,14 +212,13 @@ body{
     content: '';
     position: absolute;
     top: 0;
-    left: 50%;
-    width: 80%;
-    height: 120%;
+    left: 0;
+    width: 100%;
+    height: 125%;
     background-image: url('background/bg.png'); /* Füge hier den Pfad zu deinem Bild ein */
     background-size: cover; /* Das Bild soll den gesamten Hintergrund abdecken */
     background-position: center; /* Zentriert das Hintergrundbild */
     filter: blur(2px); /* Wendet den Blur-Effekt an */
-    transform: translateX(-50%);
     z-index: -1; /* Damit das Bild hinter dem Inhalt bleibt */
   }
   
@@ -243,9 +251,6 @@ body{
 }
 .timeline h3 {
     font-size: 1.7rem;
-}
-.timeline p {
-    font-size: 14px;
 }
 .timeline-image {
     position: absolute;
@@ -315,5 +320,25 @@ body{
     width: 60px;
     height: 60px;
 }
+.oth-img{
+    max-width: 400px;
 }
-  
+}
+.img {
+    width: 100px;
+    height: 50px;
+}
+.btn-light{
+    color: var(--blue);
+    border-color: var(--blue);
+}
+.btn-light:hover{
+    color: var(--blue);
+    border-color: var(--blue);
+}
+.btn-light:focus, .btn-light.focus {
+    color: var(--blue);
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+    box-shadow: 0 0 0 0.25rem rgba(216, 217, 219, 0.5); /* Fokus-Schattierung */
+}
