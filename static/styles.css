@@ -159,7 +159,7 @@ header{
   
   /* Wenn das Element aktiv ist, zeigt es den Inhalt */
 .collapsible-content.active {
-    max-height: 300px; /* Passe die Höhe an den Inhalt an */
+    max-height: 400px; /* Passe die Höhe an den Inhalt an */
     opacity: 1;
 }
   
@@ -299,6 +299,10 @@ header{
     width: 100%;
     transform: translateX(-50%);
 }
+.emoji-galerie::before{
+    max-width: 400px;
+    max-height: 198,4px;
+}
 }
   
 /*extra small device style */
@@ -341,4 +345,14 @@ header{
     background-color: #e2e6ea;
     border-color: #dae0e5;
     box-shadow: 0 0 0 0.25rem rgba(216, 217, 219, 0.5); /* Fokus-Schattierung */
+}
+.card-body{
+    border-color: var(--blue);
+}
+h2 {
+    color: var(--blue);
+}
+.emoji-galerie{
+    max-width: 500px;
+    max-height: 248px;
 }

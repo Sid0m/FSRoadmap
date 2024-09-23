@@ -1,7 +1,8 @@
 import csv
 import pandas as pd
 
-file_path_story = "static/csv/futureskills_bs.csv"
+#file_path_story = "static/csv/futureskills_bs.csv"
+file_path_story = "static/csv/futureskills_bs_emoji.csv"
 file_path_data = "static/csv/futureskills.csv"
 
 def read_csv_story():

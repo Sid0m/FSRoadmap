@@ -13,42 +13,54 @@
 
 <body>
   <!--<div class="blur-background">-->
-  <header class="p-3">
-    <div class="container" style="display: flex; justify-content: center;"></div>
+  <header class="p-3 d-flex justify-content-between">
     <a href="https://www.oth-regensburg.de/die-oth/einrichtungen/servicestelle-lehre-und-didaktik/future-skills"
       target="_blank">
       <img src="static/pictures/OTH_Logo.jpg" class="img-fluid float-start oth-img" alt="OTH">
     </a>
+    <div>
+      <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseAbout"
+        aria-expanded="false" aria-controls="collapseAbout">About</button>
     </div>
   </header>
 
   <div class="pt-4 container">
     <div class="container mt-4 mb-5">
-      <div class="d-flex justify-content-end">
-        <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseAbout"
-          aria-expanded="false" aria-controls="collapseAbout">About</button>
-      </div>
       <div class="collapse mt-3 mb-3" id="collapseAbout">
         <div class="card card-body">
           <p>Diese Website ist Teil des Projekts Future Skills, welches an die Servicestelle Lehre und Didaktik der OTH
-          Regensburg angegliedert ist. Mehr Informationen zum Projekt erhalten Sie auf der <a href="https://www.oth-regensburg.de/die-oth/einrichtungen/servicestelle-lehre-und-didaktik/future-skills"
-          target="_blank">OTH Website</a></p>
-          <p>Alle Emojis wurden von <a href="https://openmoji.org/" target="_blank">OpenMoji</a> designed - das Open-Source Emoji und Icon Projekt. Lizenz: <a href="https://creativecommons.org/licenses/by-sa/4.0/#" target="_blank">CC BY-SA 4.0</a></p>
+            Regensburg angegliedert ist. Mehr Informationen zum Projekt erhalten Sie auf der <a
+              href="https://www.oth-regensburg.de/die-oth/einrichtungen/servicestelle-lehre-und-didaktik/future-skills"
+              target="_blank">OTH Website</a>.</p>
+          <p>Alle Emojis wurden von <a href="https://openmoji.org/" target="_blank">OpenMoji</a> designed - das
+            Open-Source Emoji und Icon Projekt. Lizenz: <a href="https://creativecommons.org/licenses/by-sa/4.0/#"
+              target="_blank">CC BY-SA 4.0</a>.</p>
         </div>
       </div>
       <h1>Future Skills Projekt</h1>
-      <div style="display: flex; justify-content: center;">
-        <p>Begleite unseren Protagonisten 😃 bei einer Reise durch die spannende Welt der Future Skills. Start unserer
-          Reise ist aber kein Raumschiff oder ein Ort in der Zukunft, sondern ein ganz normaler Supermarktparkplatz.
-          Hier
-          steuert K. gerade nach einer durchzechten Nacht mit zwei riesigen Taschen voller Pfandflaschen den Eingang des
-          Supermarktes an. Sein Ziel: Alle Pfandflaschen seiner Geburtstagsfeier so schnell wie möglich abgeben, damit
-          er
-          seinen Zug nach Hause pünktlich erreicht. Damit das auch gelingt, muss er einige Future Skills anwenden.</p>
-      </div>
-      <div style="display: flex;">
-        <b>INFO:&nbsp;&nbsp;</b>
-        <p>Klicken Sie auf den Pfeil für die jeweilige Definition des Future Skill.</p>
+      <div class="mt-3 container-fluid">
+        <div class="row">
+          <div class="pr-1 col-md-12 col-lg-6 col-xl-5">
+            <img src="static/pictures/Emoji-Galerie.png" class="emoji-galerie img-fluid float-start" alt="OTH">
+          </div>
+          <div class="pl-1 col-md-12 col-lg-6 col-xl-7">
+            <p>Begleite unseren Protagonisten 😃 bei einer Reise durch die spannende Welt der Future Skills. Start
+              unserer
+              Reise ist aber kein Raumschiff oder ein Ort in der Zukunft, sondern ein ganz normaler Supermarktparkplatz.
+              Hier
+              steuert 😃 gerade nach einer durchzechten Nacht mit zwei riesigen Taschen voller Pfandflaschen den Eingang
+              des
+              Supermarktes an. Sein Ziel: Alle Pfandflaschen seiner Geburtstagsfeier so schnell wie möglich abgeben,
+              damit
+              er
+              seinen Zug nach Hause pünktlich erreicht. Damit das auch gelingt, muss er einige Future Skills anwenden.
+            </p>
+            <div style="display: flex;">
+              <b>INFO:&nbsp;&nbsp;</b>
+              <p>Klicken Sie auf den Pfeil für die jeweilige Definition des Future Skill.</p>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -63,7 +75,18 @@
             <span class="arrow bi bi-chevron-down"></span>
           </h3>
           <p class="collapsible-content">
+            {% if skill.id == '2' %}
+            <a>Eigeninitiative beschreibt aus eigenem Antrieb und einer inneren Überzeugung heraus zu handeln und dabei
+              Verantwortung zu übernehmen.</a>
+            <br><br>
+            <a>Kommunikationsfähigkeit beschreibt das Beherrschen sprachlicher Fähigkeiten, die dazu dienen, sich in
+              unterschiedlichen Situationen angemessen verständigen zu können. Grundlage hierfür: Solide
+              Alphabetisierung, Arbeiten mit Zahlen / Grafiken / Maßen und Rechenkenntnisse. Darüber hinaus ist die
+              Vermittlung von Wissen, interkulturelle Kommunikation sowie Social Networking ein wichtiger Bestandteil
+              davon.</a>
+            {% else %}
             {{ skill.definition }}
+            {% endif %}
             <!--<br><br> <b>Weiteres Szenario:</b> <br> <a>{{ skill.small_story }}</a>-->
           </p>
         </div>
@@ -81,8 +104,9 @@
     </div>-->
     <div class="container mt-3 mb-3">
       <div class="d-flex justify-content-start">
-        <button id="impressumButton" onclick="scrollIntoViewIfNeeded(this)" class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseImpressum"
-          aria-expanded="false" aria-controls="collapseImpressum">Impressum</button>
+        <button id="impressumButton" onclick="scrollIntoViewIfNeeded(this)" class="btn btn-light" type="button"
+          data-toggle="collapse" data-target="#collapseImpressum" aria-expanded="false"
+          aria-controls="collapseImpressum">Impressum</button>
       </div>
       <div class="collapse mt-3" id="collapseImpressum">
         <div class="card card-body">
@@ -97,11 +121,12 @@
             <br>
             93053 Regensburg
             <br><br>
-            Telefon: 
+            Telefon:
             <br><br>
-            E-Mail: 
+            E-Mail:
             <br>
-            Internet: <a href="https://www.oth-regensburg.de/die-oth/einrichtungen/servicestelle-lehre-und-didaktik" target="_blank">www.oth-regensburg.de</a>
+            Internet: <a href="https://www.oth-regensburg.de/die-oth/einrichtungen/servicestelle-lehre-und-didaktik"
+              target="_blank">www.oth-regensburg.de</a>
           </p>
         </div>
       </div>
@@ -114,4 +139,5 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="static/index.js" defer></script>
 </body>
+
 </html>
