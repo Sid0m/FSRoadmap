@@ -362,7 +362,7 @@ header {
 
     .emoji-galerie {
         max-width: 400px;
-        max-height: 198, 4px;
+        max-height: 198,4px;
     }
 }
 
@@ -395,7 +395,6 @@ header {
 
 /*Phone: extra small device style */
 @media (max-width: 500px) {
-
     .timeline-image::before {
         width: 55px;
         height: 55px;
@@ -434,13 +433,13 @@ header {
 
     .oth-img {
         max-width: 300px;
-        transform: translateX(0%);
-        /*Is needed for some reason*/
+        transform: translateX(0%); /*Is needed to counter .img-fluid's transform*/
     }
 
     .emoji-galerie {
         max-width: 300px;
-        max-height: 198, 4px;
+        max-height: 198,4px;
+        transform: translate(0%, 0%); /*Is needed to counter .img-fluid's transform*/
     }
 
     .timeline h3 {
