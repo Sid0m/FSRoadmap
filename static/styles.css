@@ -9,6 +9,7 @@
     --yellow: #ffff00;
 	--box-shadow1:0px 0px 18px 2px rgba(10, 55, 90, 0.15);
     --pointer-top: 12px;
+    --pointer-top-small: 8px;
 }
 body{
 	font-family: 'Roboto', sans-serif;
@@ -333,16 +334,49 @@ header{
 }
 }
 
+/*Phone: extra small device style */
 @media (max-width: 500px) {
+.timeline-image::before {
+    width: 50px;
+    height: 50px;
+}
+.img-fluid {
+    max-width: 90%;
+    height: auto;
+    transform: translateX(5%);
+}
+.timeline-nodes:nth-child(odd) .timeline-content::after{
+    content: "";
+    position: absolute;
+    top: var(--pointer-top-small);
+    left: auto;
+    right: 100%;
+    width: 0;
+    border-left: 0;
+    border-right: 10px solid var(--blue);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.timeline-nodes:nth-child(even) .timeline-content::after {
+    content: "";
+    position: absolute;
+    top: var(--pointer-top-small);
+    right: 100%;
+    width: 0;
+    border-right: 10px solid var(--blue);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
 .oth-img{
     max-width: 300px;
+    transform: translateX(0%); /*Is needed for some reason*/
 }
 .emoji-galerie{
     max-width: 300px;
     max-height: 198,4px;
 }
 .timeline h3{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 }
 
