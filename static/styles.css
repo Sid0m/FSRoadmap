@@ -94,12 +94,9 @@ header {
 }
 
 .timeline p,
+.timeline a,
 .timeline b {
     color: var(--blue)
-}
-
-.timeline a {
-    color: #000000;
 }
 
 .timeline b {
@@ -198,7 +195,7 @@ header {
 
 /* Wenn das Element aktiv ist, zeigt es den Inhalt */
 .collapsible-content.active {
-    max-height: 400px;
+    max-height: 600px;
     /* Passe die Höhe an den Inhalt an */
     opacity: 1;
 }

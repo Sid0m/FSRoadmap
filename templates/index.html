@@ -83,16 +83,17 @@
           </h3>
           <p class="collapsible-content">
             {% if skill.id == '2' %}
-            <a>Eigeninitiative beschreibt aus eigenem Antrieb und einer inneren Überzeugung heraus zu handeln und dabei
+            <b class="pl-0 pr-0">Eigeninitiative</b><a style="padding-left: 0px;"> beschreibt aus eigenem Antrieb und einer inneren Überzeugung heraus zu handeln und dabei
               Verantwortung zu übernehmen.</a>
             <br><br>
-            <a>Kommunikationsfähigkeit beschreibt das Beherrschen sprachlicher Fähigkeiten, die dazu dienen, sich in
+            <b class="pl-0 pr-0">Kommunikationsfähigkeit</b><a style="padding-left: 0px;"> beschreibt das Beherrschen sprachlicher Fähigkeiten, die dazu dienen, sich in
               unterschiedlichen Situationen angemessen verständigen zu können. Grundlage hierfür: Solide
               Alphabetisierung, Arbeiten mit Zahlen / Grafiken / Maßen und Rechenkenntnisse. Darüber hinaus ist die
               Vermittlung von Wissen, interkulturelle Kommunikation sowie Social Networking ein wichtiger Bestandteil
               davon.</a>
             {% else %}
-            {{ skill.definition }}
+            <b class="pl-0 pr-0">{{skill.title}}</b>
+            <a style="padding-left: 0px;">{{skill.definition}}</a>
             {% endif %}
             <!--<br><br> <b>Weiteres Szenario:</b> <br> <a>{{ skill.small_story }}</a>-->
           </p>
